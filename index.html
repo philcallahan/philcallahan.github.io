@@ -1,14 +1,132 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>Phil's Resume</title>
-    <meta http-equiv="refresh" content="0;URL='./microbial-contamination-heat-map.html'" />
+<!doctype html>
+<html lang="en">
+<html>
 
-    <style type="text/css">
-    * { font-family: sans-serif; }
-    </style>
-  </head>
-  <body>
-    <p>Please check out <a href="https://philsresume.com">PhilsResume.com</a> or <a href="microbial-contamination-heat-map.html">
-      Microbial Contamination Heat Map</a>.</p>
-  </body>
+<head>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700"
+		rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+	<link rel="stylesheet" href="default.css" />
+
+	<title>Phil's Portfolio</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/664ac12829.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 offset-sm-2">
+					<img class="pfp" src="pfp.png" />
+					Phil M. Callahan
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="portfolio-container">
+		<i class="fa fa-2x fa-circle-xmark" onclick="portfolio.close()"></i>
+		<i class="fa-solid fa-2x fa-spinner fa-spin"></i>
+		<iframe></iframe>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 offset-sm-2">
+
+				<section>
+					<i class="fa fa-2x fa-chart-pie"></i>
+					<p><strong>DataViz Portfolio:</strong> My <a
+							href="https://docs.google.com/document/d/1A-SBtFOJFqHMO1G7pDvBA8SnB-NS3MUXVAIdEOOM--4/preview">portfolio</a>
+						showcasing data projects I've been involved with in industry and academia.</p>
+				</section>
+
+				<div class="items">
+					<div class="item"><img src="assets/HJ_ROC_curve.png" onclick="portfolio.openTemplate()" /></div>
+					<div class="item"><img src="assets/heatmap_th.png" onclick="portfolio.openMicrobial()" /></div>
+					<div class="item"><img src="assets/burndown_lg.png" /></div>
+					<div class="item"><img src="assets/Figure5_sentiment_analysis.png" /></div>
+					<div class="item"><img src="assets/clinical_trial_safety_predictive_model.png" /></div>
+					<div class="item"><img src="assets/SPC_lg.png" /></div>
+				</div>
+
+				<section>
+					<i class="fa fa-2x fa-github"></i>
+					<p><strong>Github:</strong> <a href="https://github.com/philcallahan/"
+							target="_blank">github.com/philcallahan</a>
+					</p>
+				</section>
+
+				<section>
+					<i class="fa fa-2x fa-linkedin-square"></i>
+					<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/philcallahan"
+							target="_blank">linkedin.com/in/philcallahan</a></p>
+				</section>
+
+				<section>
+					<i class="fa fa-2x fa-user-tie"></i>
+					<p><strong>Resume:</strong> Senior data professional with 15+ years of industry experience in
+						data-driven industries. Earned a Master of Science (MS) in data science (4.0 GPA)
+						demonstrating
+						proficiency with programming languages like Python, R, SQL, and Hadoop (HDFS) along with
+						artificial intelligence (AI), Natural Language Processing (NLP), and machine learning (ML)
+						methods like random forest, support vector machines (SVM), linear/logistic regression,
+						decision
+						trees, clustering, classification, sentiment analysis, etc.</p>
+					<p><a class="btn btn-primary" href="assets/PMC_data_sci_resume_Aug2023.pdf" role="button"
+							target="_blank"><i class="fa fa-file-pdf"></i> View PDF</a></p>
+				</section>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		class Portfolio {
+			constructor() {
+				this.bodyEl = document.querySelector('body');
+				this.portfolioContainerEl = document.querySelector('.portfolio-container');
+				this.iframeEl = document.querySelector('iframe');
+			}
+
+			open(url) {
+				this.iframeEl.src = url;
+				this.portfolioContainerEl.style.top = `${window.scrollY}px`;
+				this.portfolioContainerEl.style.display = 'block';
+				this.bodyEl.style.overflow = 'hidden';
+			}
+
+			close() {
+				this.portfolioContainerEl.style.display = 'none';
+				this.bodyEl.style.overflow = 'auto';
+			}
+
+			openMicrobial() {
+				this.open('microbial-contamination-heat-map.html');
+			}
+
+			openTemplate() {
+				this.open('template.html');
+			}
+		}
+
+		const portfolio = new Portfolio();
+	</script>
+</body>
+
 </html>

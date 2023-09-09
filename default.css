@@ -1,0 +1,130 @@
+body {
+	font-family: Roboto, sans-serif;
+	background:
+		linear-gradient(rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)),
+		url('./background.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.portfolio-page {
+	background: #ffffff;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+
+	padding-top: 20px;
+	margin-bottom: 20px;
+	background:
+		linear-gradient(rgba(255, 255, 255, 1),
+			rgba(255, 255, 255, 0));
+	font-family: Oswald, sans-serif;
+	font-size: min(8vw, 40px);
+	white-space: nowrap;
+}
+
+img.pfp {
+	width: min(14vw, 100px);
+	margin-bottom: 10px;
+}
+
+.portfolio-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	z-index: 120;
+	background: #ffffff;
+	display: none;
+}
+
+.portfolio-container i.fa-circle-xmark {
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	cursor: pointer;
+	z-index: 120;
+}
+
+.portfolio-container i.fa-circle-xmark:hover {
+	color: #666666;
+}
+
+.portfolio-container i.fa-spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -10px;
+	margin-left: -10px;
+	cursor: wait;
+	z-index: -1;
+	color: #666666;
+}
+
+.portfolio-container iframe {
+	width: 100%;
+	height: 100%;
+}
+
+section {
+	position: relative;
+	padding-top: 7px;
+	padding-left: 46px;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+section:first-of-type {
+	margin-bottom: 0px;
+}
+
+section>i:first-of-type {
+	position: absolute;
+	width: 38px;
+	top: 0;
+	left: 0;
+}
+
+section,
+.items {
+	margin-bottom: 40px;
+}
+
+.items {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.items .item {
+	flex-grow: 1;
+	width: 33%;
+	cursor: pointer;
+}
+
+.items .item img {
+	border: 9px solid transparent;
+	width: 100%;
+}
+
+.items .item img:hover {
+	border: 8px solid #00003322;
+	border-radius: 4px;
+	padding: 1px;
+}
+
+.items .item img:active {
+	border: 8px solid #00003344;
+	border-radius: 4px;
+	padding: 1px;
+}
