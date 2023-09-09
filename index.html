@@ -55,12 +55,12 @@
 				</section>
 
 				<div class="items">
-					<div class="item"><img src="assets/HJ_ROC_curve.png" onclick="portfolio.openTemplate()" /></div>
+					<div class="item"><img src="assets/HJ_ROC_curve.png" /></div>
 					<div class="item"><img src="assets/heatmap_th.png" onclick="portfolio.openMicrobial()" /></div>
 					<div class="item"><img src="assets/burndown_lg.png" /></div>
 					<div class="item"><img src="assets/Figure5_sentiment_analysis.png" /></div>
-					<div class="item"><img src="assets/clinical_trial_safety_predictive_model.png" /></div>
-					<div class="item"><img src="assets/SPC_lg.png" /></div>
+					<div class="item"><img src="assets/clinical_trial_safety_predictive_model.png" onclick="portfolio.openGrowth()" /></div>
+					<div class="item"><img src="assets/SPC_lg.png" onclick="portfolio.openSPC()" /></div>
 				</div>
 
 				<section>
@@ -118,6 +118,14 @@
 
 			openMicrobial() {
 				this.open('microbial-contamination-heat-map.html');
+			}
+
+			openGrowth() {
+				this.open('micro_growth.html');
+			}
+
+			openSPC() {
+				this.open('SPC.html');
 			}
 
 			openTemplate() {
